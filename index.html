@@ -361,17 +361,17 @@
 
  
 
-  var map = L.map("map").setView([19.637036769118815, -99.2497678], 20);
+  var map = L.map("map").setView([19.69346263478449, -99.18990935263753], 15);
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 19,
     attribution: "...",
   }).addTo(map);
-  L.marker([19.637036769118815, -99.2497678])
+  L.marker([19.69346263478449, -99.18990935263753])
     .addTo(map)
     .bindPopup("Campo 4")
     .openPopup();
 function cambiarC1(){
-    map.setView([19.637036769118815, -99.20785050208028], 20);
+    map.setView([19.637036769118815, -99.20785050208028], 17);
     L.marker([19.637036769118815, -99.20785050208028])
     .addTo(map)
     .bindPopup("Campo 1")
@@ -380,8 +380,8 @@ function cambiarC1(){
   }
 
   function cambiarC4(){
-    map.setView([19.637036769118815, -99.2497678], 20);
-    L.marker([19.637036769118815, -99.2497678])
+    map.setView([19.69346263478449, -99.18990935263753], 15);
+    L.marker([19.69346263478449, -99.18990935263753])
     .addTo(map)
     .bindPopup("Campo 4")
     .openPopup();
