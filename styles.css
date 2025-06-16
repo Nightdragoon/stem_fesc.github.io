@@ -1,16 +1,17 @@
 body {
     /* Definimos la imagen de fondo */
     background-image: url('Imagenes/fondo.jpg');
-    background-color: black;
-    background-repeat: no-repeat;       /* No repetir */
-    background-position: center;        /* Centrar */
-    background-size: cover;             /* Cubrir todo el área */
-    background-attachment: fixed;        /* Queda fija al hacer scroll */
+    background-repeat: no-repeat;
+    /* No repetir */
+    background-position: center;
+    /* Centrar */
+    background-size: cover;
+    /* Cubrir todo el área */
+    background-attachment: fixed;
+    /* Queda fija al hacer scroll */
     margin: 0;
     padding: 0;
-  }
-
-
+}
 
 /* Para asegurarnos de que el contenido contraste bien */
 h1,
@@ -67,6 +68,7 @@ p {
     color: #0dcaf0 !important;
 }
 
+
 #hero {
     position: relative;
     min-height: 100vh;
@@ -118,7 +120,12 @@ section {
     box-shadow: 0 8px 32px rgba(13, 202, 240, 0.18);
 }
 
-
+.card-img-top {
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    object-fit: cover;
+    height: 435px;
+}
 
 /* List group */
 .list-group-item {
@@ -151,6 +158,11 @@ video {
 }
 
 
+/* Miembros */
+#miembros .card-img-top {
+    height: 220px;
+    object-fit: cover;
+}
 
 /* Redes Sociales */
 #redes .bi {
@@ -176,6 +188,9 @@ video {
         padding-right: 1rem;
     }
 
+    .card-img-top {
+        height: 160px;
+    }
 }
 
 @media (max-width: 767px) {
@@ -188,4 +203,7 @@ video {
         font-size: 2rem;
     }
 
+    .card-img-top {
+        height: 120px;
+    }
 }
