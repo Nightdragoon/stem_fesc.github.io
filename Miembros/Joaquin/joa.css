@@ -1,0 +1,232 @@
+body {
+    /* Definimos la imagen de fondo y agregamos un gradiente oscuro */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.721), rgba(0, 0, 0, 0.5)),
+        url('../../Imagenes/joaquin\(2\).jpeg');
+    background-repeat: no-repeat;
+    /* No repetir */
+    background-position: center;
+    /* Centrar */
+    background-size: cover;
+    /* Cubrir todo el área */
+    background-attachment: fixed;
+    /* Queda fija al hacer scroll */
+    margin: 0;
+    padding: 0;
+}
+
+/* Para asegurarnos de que el contenido contraste bien */
+h1,
+p,
+h2 {
+    color: #f0f0f0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.container {
+    padding: 2rem;
+    justify-content: center;
+}
+
+/* Navbar */
+.navbar {
+    backdrop-filter: blur(6px);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-brand:hover {
+    color: #0dcaf0 !important;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 1.5rem;
+    padding: 0;
+}
+
+.navbar-custom-img {
+    height: 40px;
+    width: auto;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    object-fit: contain;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+
+}
+
+.navbar-custom-img:hover {
+    opacity: 0.9;
+    /* Ligera transparencia */
+    transform: scale(1.03);
+    /* Zoom suave al hover */
+    filter: drop-shadow(0 0 8px #0dcaf0);
+}
+
+/* Contenedor principal de la tarjeta */
+.card-container {
+    background: rgba(0, 0, 0, 0.82);
+    backdrop-filter: blur(5px);
+    border-radius: 1rem;
+}
+
+/* Estilo para el óvalo de redes sociales */
+.redes-ovalo-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.redes-ovalo {
+    padding: 0.5rem 2rem;
+    margin: 1rem 0;
+    text-align: center;
+    background: rgba(0, 123, 255, 0.15);
+    border: 1px solid rgba(0, 123, 255, 0.3);
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.2);
+    border-radius: 50px;
+    /* Valor que crea forma ovalada */
+    width: fit-conte;
+    /* Ajusta el ancho al contenido */
+    display: inline-block;
+    border-radius: 100px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.redes-ovalo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.3);
+    /* Efecto de sombra al pasar el mouse */
+    animation: neonGlow 1.5s ease-in-out infinite alternate;
+}
+
+
+
+/* Contenedor de íconos */
+.redes-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    /* Espacio entre íconos */
+    flex-wrap: wrap;
+    /* Para responsive */
+}
+
+/* Ajustes para los íconos */
+.redes-ovalo .bi {
+    font-size: 1.5rem;
+    transition: color 0.2s;
+}
+
+.redes-ovalo .bi:hover {
+    color: #0dcaf0;
+}
+
+/* Efecto hover para los íconos */
+.hover-glow {
+    transition: all 0.3s ease;
+}
+
+.hover-glow:hover {
+    text-shadow: 0 0 10px #0dcaf0;
+    transform: scale(1.1);
+}
+
+
+.card {
+    display: block;
+    margin: 0 auto;
+    width: 90%;
+    /* Ancho menor al 100% */
+    max-width: 600px;
+    /* Límite máximo */
+}
+
+.btn-primary,
+.btn-secondary {
+    border-radius: 2rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 8px #0dcaf0;
+    transition: background 0.2s, color 0.2s;
+    display: block;
+    margin: 0 auto;
+    width: 110px;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+    background: #0dcaf0;
+    color: #222;
+}
+
+/*redes sociales*/
+#redes .bi {
+    transition: color 0.2s, transform 0.2s;
+}
+
+#redes .bi:hover {
+    color: #0dcaf0;
+    transform: scale(1.2);
+}
+
+
+
+section {
+    position: relative;
+    z-index: 1;
+}
+
+
+
+h1.text-center {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff;
+    animation: neonGlow 1.5s ease-in-out infinite alternate;
+}
+
+.text-primary {
+    color: #00ffff !important;
+}
+
+@keyframes neonGlow {
+    from {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #007bff, 0 0 20px #007bff;
+    }
+
+    to {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #007bff, 0 0 40px #007bff;
+    }
+}
+
+/* Responsive tweaks */
+@media (max-width: 991px) {
+    #hero {
+        min-height: 60vh;
+        padding-top: 5rem;
+    }
+
+    .container,
+    .container-fluid {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .card-img-top {
+        height: 160px;
+    }
+}
+
+@media (max-width: 767px) {
+    #hero {
+        min-height: 40vh;
+        padding-top: 6rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .card-img-top {
+        height: 120px;
+    }
+}
