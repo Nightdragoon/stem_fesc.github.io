@@ -112,7 +112,7 @@
         <p class="lead mb-4">
           Ciencia, Astronomía, Programación y Robótica al alcance de todos
         </p>
-        <a href="#sobre" class="btn btn-lg btn-primary">Conócenos</a>
+        <a href="#sobre" class="btn btn-lg btn-primary" >Conócenos</a>
       </div>
 
       <!-- Columna de imagen -->
@@ -197,6 +197,9 @@
               <div class="card-body">
                 <h5 class="card-title text-white">Semana de la cosmonáutica</h5>
               </div>
+              <div class="card-footer">
+                <button class="btn btn-primary float-end btn-lg" id="btnSemanaCosmo" data-bs-toggle="modal" data-bs-target="#modalVerMas">ver mas </button>
+              </div>
             </div>
           </div>
           <div class="col">
@@ -204,6 +207,9 @@
               <img src="Imagenes/noche_estrellas.jpg" class="card-img-top" alt="...">
               <div class="card-body">
                 <h5 class="card-title text-white">Noche de las estrellas</h5>
+              </div>
+              <div class="card-footer">
+                <button class="btn btn-primary float-end btn-lg" id="btnNocheEstrellas" data-bs-toggle="modal" data-bs-target="#modalVerMas">ver mas </button>
               </div>
             </div>
           </div>
@@ -213,13 +219,19 @@
               <div class="card-body">
                 <h5 class="card-title text-white">Congreso de proyectos</h5>
               </div>
+              <div class="card-footer">
+                <button class="btn btn-primary float-end btn-lg" id="btnCongresoProyectos" data-bs-toggle="modal" data-bs-target="#modalVerMas">ver mas </button>
+              </div>
             </div>
           </div>
           <div class="col">
             <div class="card h-100 bg-dark bg-opacity-50" data-aos="fade-up" data-aos-delay="400">
               <img src="Imagenes/proyeccion_peliculas.jpeg" class="card-img-top" alt="...">
               <div class="card-body">
-                <h5 class="card-title text-white">Proyección de películas</h5>
+                <h5 class="card-title text-white">Picnic astronomico</h5>
+              </div>
+              <div class="card-footer">
+                <button class="btn btn-primary float-end btn-lg" id="btnPicnic" data-bs-toggle="modal" data-bs-target="#modalVerMas">ver mas </button>
               </div>
             </div>
           </div>
@@ -403,9 +415,24 @@
 </div>
 </section>
 
+<!--Modal para descripciones-->
 
-
-
+<div class="modal fade" id="modalVerMas" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content bg-dark">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Descripcion</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="descripcion_modal">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
     
@@ -420,8 +447,27 @@
     duration: 800,
     once: true
   });
+   $("#btnSemanaCosmo").on('click', function(){
+    let descripcion = document.getElementById("descripcion_modal");
+    descripcion.innerHTML = "";
+    descripcion.innerHTML = '<p class="text-white">En STEM FESC formamos parte de la Semana de la Cosmonáutica celebrada en la ENES Juriquilla, gracias a la invitación de la AAIAQ. Tuvimos la oportunidad de impartir ponencias sobre Arqueoastronomía e Historia y futuro en la exploración espacial. Además, en nuestros talleres pudimos compartir nuestros proyectos en robótica y programación enfocados en la exploración espacial, así como hacer labor de divulgación sobre Astroquímica y uso de telescopios.</p>';
+   })
+   $("#btnNocheEstrellas").on('click', function(){
+    let descripcion = document.getElementById("descripcion_modal");
+    descripcion.innerHTML = "";
+    descripcion.innerHTML = '<p class="text-white">La "Noche de las Estrellas" es un evento de divulgación científica donde se busca acercar el conocimiento astronómico a la población de forma divertida. Se realizan actividades de divulgación astronómica y, al caer la noche, se invita a la observación del cielo con telescopios. En STEM FESC hemos realizado este evento en diversas ocasiones dentro de la facultad, ¡y seguiremos haciéndolo muchas veces más!</p>';
+   })
+   $("#btnCongresoProyectos").on('click', function(){
+    let descripcion = document.getElementById("descripcion_modal");
+    descripcion.innerHTML = "";
+    descripcion.innerHTML = '<p class="text-white">La divisiones de robótica y programación de STEM FESC tuvieron la grandiosa oportunidad de participar en este evento organizado por la FES Cuautitlán, en donde pudimos mostrar ante una comunidad académica y profesional, el avance de nuestros proyectos: un Rover y un CanSat, denotando sus capacidades vanguardistas y tecnológicas que siguen en constante mejora.</p>';
+   })
+   $("#btnPicnic").on('click', function(){
+    let descripcion = document.getElementById("descripcion_modal");
+    descripcion.innerHTML = "";
+    descripcion.innerHTML = '<p class="text-white">Una velada encantadora donde puedes compartir un rato agradable con tus amigos, comiendo snacks, disfrutando la noche, y al mismo tiempo ¡aprendiendo sobre astronomía! En este evento STEM FESC permite que la comunidad académica realice observación astronómica, al tiempo que se hacen pláticas de divulgación, o que vemos juntos películas relacionadas con los temas. ¡Espera más eventos así próximamente!</p>';
+   })
 
- 
 
   var map = L.map("map").setView([19.69346263478449, -99.18990935263753], 15);
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
