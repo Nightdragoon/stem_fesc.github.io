@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Stem Fesc | Miembros</title>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+        <link rel="stylesheet" href="../styles.css">
+
+    <title>Actividades</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <link rel="icon" href="../Imagenes/logo.png">
+    <link rel="apple-touch-icon" href="../Imagenes/logo.png">
+    </head>
+    <body>
+     <!--navbar-->
+    <section id="navbar-section" style="position: relative; z-index: 1000;">
+
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: rgba(0, 0, 0, 0.5);">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="../index.html">Stem Fesc <i class="bi bi-rocket-takeoff"></i></a>
+            </div>
+        </nav>
+    </section>
+        <!--aqui es la seccion de actividades-->
+        <section id="actividades" class="mt-5">
+            <div class="container-fluid">
+                <div class="container">
+                  <h2 class="text-white mb-4">Nuestras Competencias</h2>
+                  <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div class="col">
+                        <div class="card h-100 bg-dark bg-opacity-50" data-aos="fade-up" data-aos-delay="100">
+                          <img src="../Imagenes/primeraFecha_ICPC.jpeg" class="card-img-top" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title text-white">Primera fecha de la ICPC</h5>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="card h-100 bg-dark bg-opacity-50" data-aos="fade-up" data-aos-delay="200">
+                          <img src="../Imagenes/SegundaFecha_ICPC.jpeg" class="card-img-top" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title text-white">Segunda fecha ICPC</h5>
+                          </div>
+                        </div>
+                  </div>
+                </div>
+              </div>
+        </section>
+        <!--boton regresar-->
+        <section>
+            <div class="container d-flex justify-content-center mt-5">
+                <a class="btn btn-primary btn-lg" href="../index.html">Volver</a>
+            </div>
+
+        </section>
+        <!--Modal para descripciones-->
+
+<div class="modal fade" id="modalVerMas" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content bg-dark">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Descripcion</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="descripcion_modal">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="crossorigin=""></script>
+        <script>
+            AOS.init({
+    duration: 800,
+    once: true
+  });
+        </script>
+    
+    </body>
+</html>
