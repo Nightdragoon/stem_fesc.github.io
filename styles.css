@@ -157,6 +157,19 @@ video {
     height: auto;
 }
 
+/*Modals*/
+.modal-content {
+    background: linear-gradient(rgba(24, 24, 24, 0.555), #0cbcdf86),
+                url('Imagenes/fondo.jpg') center center/cover no-repeat; 
+    border-radius: 1rem;
+    border: none;
+    box-shadow: 0 4px 32px rgba(0,0,0,0.4);
+}
+
+.modal-backdrop.show {
+    background-color: rgba(0, 0, 0, 0.6); /* Más transparencia en el overlay */
+   }
+
 
 /* Miembros */
 #miembros .card-img-top {
