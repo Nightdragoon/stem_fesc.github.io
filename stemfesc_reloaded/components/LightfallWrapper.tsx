@@ -7,7 +7,7 @@ const Lightfall = dynamic(() => import("@/components/Lightfall"), { ssr: false }
 
 export default function LightfallWrapper() {
   const [loaded, setLoaded] = useState(false);
-  const timeoutRef = useRef<ReturnType<typeof setTimeout>>();
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     timeoutRef.current = setTimeout(() => {
