@@ -1,0 +1,64 @@
+@import "tailwindcss";
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-cyan-stem: #0dcaf0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0A29FF;
+}
+
+body > div:first-child canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  color: #f0f0f0;
+  text-shadow: 1px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+section {
+  position: relative;
+}
+
+section {
+  position: relative;
+}
+
+.card-stem {
+  border: none;
+  border-radius: 1rem;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.18);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card-stem:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(13, 202, 240, 0.18);
+}
+
+.btn-stem {
+  border-radius: 2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 8px rgba(13, 202, 240, 0.12);
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-stem:hover {
+  background: #0dcaf0;
+  color: #222;
+}
+
+@media (max-width: 991px) {
+  .container, .container-fluid {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
