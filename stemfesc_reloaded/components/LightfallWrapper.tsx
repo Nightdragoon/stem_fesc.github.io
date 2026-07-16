@@ -1,12 +1,20 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import dynamic from "next/dynamic";
 
 const Lightfall = dynamic(() => import("@/components/Lightfall"), { ssr: false });
 
 export default function LightfallWrapper() {
   const [loaded, setLoaded] = useState(false);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout>>();
+
+  useEffect(() => {
+    timeoutRef.current = setTimeout(() => {
+      setLoaded(true);
+    }, 5000);
+    return () => clearTimeout(timeoutRef.current);
+  }, []);
 
   return (
     <>
@@ -20,11 +28,15 @@ export default function LightfallWrapper() {
       )}
       <div
         className="fixed inset-0 w-full h-full -z-10 pointer-events-none"
-        style={{ opacity: loaded ? 1 : 0, transition: "opacity 0.8s" }}
+        style={{
+          opacity: loaded ? 1 : 0,
+          transition: "opacity 0.8s",
+          backgroundColor: "#000000",
+        }}
       >
         <Lightfall
           colors={['#A6C8FF', '#5227FF', '#FF9FFC']}
-          backgroundColor="#0A29FF"
+          backgroundColor="#000000"
           speed={0.3}
           streakCount={2}
           streakWidth={1}
@@ -34,11 +46,14 @@ export default function LightfallWrapper() {
           twinkle={0.6}
           zoom={3}
           backgroundGlow={0.4}
-          opacity={0.85}
+          opacity={0.95}
           mouseInteraction={true}
           mouseStrength={0.5}
           mouseRadius={0.8}
-          onLoad={() => setLoaded(true)}
+          onLoad={() => {
+            clearTimeout(timeoutRef.current);
+            setLoaded(true);
+          }}
         />
       </div>
     </>
