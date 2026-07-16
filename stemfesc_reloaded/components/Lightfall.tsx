@@ -24,6 +24,7 @@ export interface LightfallProps {
   mouseRadius?: number;
   mouseDampening?: number;
   mixBlendMode?: string;
+  onLoad?: () => void;
 }
 
 type RGB = [number, number, number];
@@ -212,7 +213,8 @@ const Lightfall: React.FC<LightfallProps> = ({
   mouseStrength = 0.5,
   mouseRadius = 1,
   mouseDampening = 0.15,
-  mixBlendMode
+  mixBlendMode,
+  onLoad
 }) => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const rafRef = useRef<number | null>(null);
@@ -222,6 +224,7 @@ const Lightfall: React.FC<LightfallProps> = ({
   const rendererRef = useRef<Renderer | null>(null);
   const mouseTargetRef = useRef<[number, number]>([0, 0]);
   const lastTimeRef = useRef(0);
+  const onLoadCalled = useRef(false);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -325,6 +328,10 @@ const Lightfall: React.FC<LightfallProps> = ({
       if (!paused && programRef.current && meshRef.current) {
         try {
           renderer.render({ scene: meshRef.current });
+          if (!onLoadCalled.current && onLoad) {
+            onLoadCalled.current = true;
+            onLoad();
+          }
         } catch (e) {
           console.error(e);
         }

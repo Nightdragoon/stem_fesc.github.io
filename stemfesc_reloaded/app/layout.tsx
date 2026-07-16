@@ -53,7 +53,7 @@ export default function RootLayout({
         <LightfallWrapper />
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
         <Navbar />
-        <main className="flex-1 relative z-10">{children}</main>
+        <main className="flex-1 relative z-10 pt-16">{children}</main>
         <Footer />
         <AOSProvider />
       </body>
