@@ -27,38 +27,15 @@ section {
   position: relative;
 }
 
-section {
-  position: relative;
-}
-
-.card-stem {
-  border: none;
-  border-radius: 1rem;
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.18);
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.card-stem:hover {
-  transform: translateY(-6px) scale(1.03);
-  box-shadow: 0 8px 32px rgba(13, 202, 240, 0.18);
-}
-
-.btn-stem {
-  border-radius: 2rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-  box-shadow: 0 2px 8px rgba(13, 202, 240, 0.12);
-  transition: background 0.2s, color 0.2s;
-}
-
-.btn-stem:hover {
-  background: #0dcaf0;
-  color: #222;
-}
-
-@media (max-width: 991px) {
-  .container, .container-fluid {
-    padding-left: 1rem;
-    padding-right: 1rem;
+@keyframes neonGlow {
+  from {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #06b6d4, 0 0 20px #06b6d4;
   }
+  to {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #06b6d4, 0 0 40px #06b6d4;
+  }
+}
+
+.animate-neon-glow {
+  animation: neonGlow 1.5s ease-in-out infinite alternate;
 }

@@ -22,13 +22,15 @@ export const metadata: Metadata = {
     "Es un equipo de profesionistas en formación provenientes de diversas carreras de la Facultad de Estudios Superiores Cuautitlán, UNAM.",
   keywords:
     "Stem fesc, STEM FESC, STEMFESC, FESC STEM, fesc, stem, ciencia, astronomía, programación",
+  authors: [{ name: "Stem FESC joaquin emmanuel" }],
+  robots: { index: true, follow: true },
   icons: { icon: "/Imagenes/logo.png", apple: "/Imagenes/logo.png" },
   openGraph: {
     title: "Stem fesc astronomia programacion y mucho mas",
     description:
       "Es un equipo de profesionistas en formación provenientes de diversas carreras de la Facultad de Estudios Superiores Cuautitlán, UNAM.",
     images: ["https://www.stemfesc.com.mx/Imagenes/logo.png"],
-    url: "https://www.stemfesc.com.mx/#redes",
+    url: "https://www.stemfesc.com.mx/",
     type: "website",
   },
   twitter: {
