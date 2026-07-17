@@ -49,12 +49,12 @@ export default function LightfallWrapper() {
         <Lightfall
           colors={['#A6C8FF', '#5227FF', '#FF9FFC']}
           backgroundColor="#000000"
-          speed={isMobile ? 0.2 : 0.3}
+          speed={isMobile ? 0.15 : 0.3}
           streakCount={isMobile ? 1 : 2}
           streakWidth={1}
           streakLength={1}
-          glow={isMobile ? 0.6 : 0.8}
-          density={isMobile ? 0.25 : 0.4}
+          glow={isMobile ? 0.5 : 0.8}
+          density={isMobile ? 0.15 : 0.4}
           twinkle={isMobile ? 0.4 : 0.6}
           zoom={3}
           backgroundGlow={isMobile ? 0.3 : 0.4}
@@ -62,7 +62,8 @@ export default function LightfallWrapper() {
           mouseInteraction={!isMobile}
           mouseStrength={0.5}
           mouseRadius={0.8}
-          quality={isMobile ? 0.5 : 1}
+          quality={isMobile ? 0.25 : 1}
+          isMobile={isMobile}
           onLoad={() => {
             if (timeoutRef.current) clearTimeout(timeoutRef.current);
             setLoaded(true);

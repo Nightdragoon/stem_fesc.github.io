@@ -24,6 +24,7 @@ export interface LightfallProps {
   mouseRadius?: number;
   mouseDampening?: number;
   quality?: number;
+  isMobile?: boolean;
   mixBlendMode?: string;
   onLoad?: () => void;
 }
@@ -67,8 +68,7 @@ void main() {
 }
 `;
 
-const fragment = `
-precision highp float;
+const getFragmentShader = (precision: string) => `${precision}
 
 uniform vec3  iResolution;
 uniform vec2  iMouse;
@@ -217,6 +217,7 @@ const Lightfall: React.FC<LightfallProps> = ({
   mouseRadius = 1,
   mouseDampening = 0.15,
   quality = 1,
+  isMobile = false,
   mixBlendMode,
   onLoad
 }) => {
@@ -234,10 +235,11 @@ const Lightfall: React.FC<LightfallProps> = ({
     const container = containerRef.current;
     if (!container) return;
 
+    const baseDpr = dpr ?? (typeof window !== 'undefined' ? window.devicePixelRatio || 1 : 1);
     const renderer = new Renderer({
-      dpr: dpr ?? (typeof window !== 'undefined' ? window.devicePixelRatio || 1 : 1),
+      dpr: isMobile ? Math.min(baseDpr, 1.5) : baseDpr,
       alpha: true,
-      antialias: true
+      antialias: !isMobile
     });
     rendererRef.current = renderer;
     const gl = renderer.gl;
@@ -281,7 +283,18 @@ const Lightfall: React.FC<LightfallProps> = ({
       uQuality: { value: Math.max(0.1, Math.min(1, quality)) }
     };
 
-    const program = new Program(gl, { vertex, fragment, uniforms });
+    const fragmentShader = getFragmentShader(isMobile ? 'precision mediump float;' : 'precision highp float;');
+    let program: Program;
+    try {
+      program = new Program(gl, { vertex, fragment: fragmentShader, uniforms });
+    } catch (e) {
+      console.error('[Lightfall] Shader compilation failed:', e);
+      if (onLoad && !onLoadCalled.current) {
+        onLoadCalled.current = true;
+        onLoad();
+      }
+      return;
+    }
     programRef.current = program;
 
     const geometry = new Triangle(gl);
@@ -338,7 +351,7 @@ const Lightfall: React.FC<LightfallProps> = ({
             onLoad();
           }
         } catch (e) {
-          console.error(e);
+          console.error('[Lightfall] Render error:', e);
         }
       }
     };
@@ -385,7 +398,8 @@ const Lightfall: React.FC<LightfallProps> = ({
     mouseStrength,
     mouseRadius,
     mouseDampening,
-    quality
+    quality,
+    isMobile
   ]);
 
   return (
