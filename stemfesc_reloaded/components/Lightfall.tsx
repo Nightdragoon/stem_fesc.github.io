@@ -25,6 +25,7 @@ export interface LightfallProps {
   mouseDampening?: number;
   quality?: number;
   isMobile?: boolean;
+  targetFps?: number;
   mixBlendMode?: string;
   onLoad?: () => void;
 }
@@ -218,6 +219,7 @@ const Lightfall: React.FC<LightfallProps> = ({
   mouseDampening = 0.15,
   quality = 1,
   isMobile = false,
+  targetFps,
   mixBlendMode,
   onLoad
 }) => {
@@ -229,6 +231,7 @@ const Lightfall: React.FC<LightfallProps> = ({
   const rendererRef = useRef<Renderer | null>(null);
   const mouseTargetRef = useRef<[number, number]>([0, 0]);
   const lastTimeRef = useRef(0);
+  const lastFrameRef = useRef(0);
   const onLoadCalled = useRef(false);
 
   useEffect(() => {
@@ -328,6 +331,11 @@ const Lightfall: React.FC<LightfallProps> = ({
 
     const loop = (t: number) => {
       rafRef.current = requestAnimationFrame(loop);
+      if (targetFps && targetFps > 0) {
+        const minInterval = 1000 / targetFps;
+        if (t - lastFrameRef.current < minInterval) return;
+        lastFrameRef.current = t;
+      }
       uniforms.iTime.value = t * 0.001;
       if (mouseDampening > 0) {
         if (!lastTimeRef.current) lastTimeRef.current = t;
@@ -399,7 +407,8 @@ const Lightfall: React.FC<LightfallProps> = ({
     mouseRadius,
     mouseDampening,
     quality,
-    isMobile
+    isMobile,
+    targetFps
   ]);
 
   return (
