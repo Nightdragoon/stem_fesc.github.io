@@ -6,6 +6,7 @@ import Sobre from "@/components/Sobre";
 import ActivityCard from "@/components/ActivityCard";
 import MemberCard from "@/components/MemberCard";
 import { miembros } from "@/data/miembros";
+import SuscribeteANewsLetter from "@/components/SuscribeteANewsLetter";
 
 const Mapa = dynamic(() => import("@/components/Mapa"), { ssr: false });
 
@@ -56,6 +57,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      <SuscribeteANewsLetter />
+
     </>
   );
 }
