@@ -82,4 +82,17 @@ export const miembros: Miembro[] = [
       { nombre: "LinkedIn", url: "https://www.linkedin.com/in/gustavo-mungu%C3%ADa-fragoso-dev2003/", icono: "bi-linkedin" },
     ],
   },
+  {
+    nombre: "Yoselin",
+    apellido: "Muñoz Jiménez",
+    slug: "yose",
+    bio: 'HOLA, Soy Yoselin Muñoz Jiménez, estudiante de Ingeniería en Telecomunicaciones, Sistemas y Electrónica en la Facultad de Estudios Superiores Cuautitlán, UNAM. Me apasiona la programación, la astronomía y el desarrollo web. Actualmente, formo parte del equipo de STEM Fesc como desarrolladora web, donde colaboro en proyectos innovadores y contribuyo al crecimiento de la comunidad estudiantil. Estoy emocionada por seguir aprendiendo y creciendo en este campo.',
+    imagen: "/Imagenes/yose.avif",
+    fondo: "/Imagenes/yose.avif",
+    redes: [
+      
+    ],
+
+
+  },
 ];
