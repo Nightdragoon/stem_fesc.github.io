@@ -86,9 +86,22 @@ export const miembros: Miembro[] = [
     nombre: "Yoselin",
     apellido: "Muñoz Jiménez",
     slug: "yose",
-    bio: 'HOLA, Soy Yoselin Muñoz Jiménez, estudiante de Ingeniería en Telecomunicaciones, Sistemas y Electrónica en la Facultad de Estudios Superiores Cuautitlán, UNAM. Me apasiona la programación, la astronomía y el desarrollo web. Actualmente, formo parte del equipo de STEM Fesc como desarrolladora web, donde colaboro en proyectos innovadores y contribuyo al crecimiento de la comunidad estudiantil. Estoy emocionada por seguir aprendiendo y creciendo en este campo.',
+    bio: 'pidad estudiantil. Estoy emocionada por seguir aprendiendo y creciendo en este campo.',
     imagen: "/Imagenes/yose.avif",
     fondo: "/Imagenes/yose.avif",
+    redes: [
+      
+    ],
+
+
+  },
+  {
+    nombre: "Daniel Hernan ",
+    apellido: "Peraza Yañez",
+    slug: "daniel",
+    bio: 'Desarrollador backend en formación con experiencia en construcción de sistemas empresariales reales, diseño de arquitecturas MVC y modelado de bases de datos relacionales complejas. Interesado en la intersección entre ingeniería de software y creatividad digital, integrando desarrollo de videojuegos y proyectos interactivos como extensión técnica y experimental.',
+    imagen: "/Imagenes/daniel.avif",
+    fondo: "/Imagenes/daniel.avif",
     redes: [
       
     ],
